@@ -1,10 +1,13 @@
-
 import { useHistory } from 'react-router-dom'
 import { Cards } from '../pages/Pokedex/styled'
-//import {GlobalState} from ''//
+import { GlobalStateContext } from '../global/GlobalStateContext'
+import React, { useContext } from 'react'
 
-const Card = ()=>{
+const Card = (props) => {
     const history = useHistory()
+    const { requests } = useContext(GlobalStateContext)
+
+
 
     const mover = () => {
 
@@ -13,22 +16,22 @@ const Card = ()=>{
             console.log("removeu")
 
         } else {
-            //função de add//
+            requests.addToPokedex();
             console.log("adcionou")
         }
     }
 
-const verDet = ()=>{
-    history.push("/poke-detail")
-  
-}
+    const verDet = () => {
+        history.push("/poke-detail")
 
-    return(
+    }
+
+    return (
         <Cards>
-            <img scr='{pikachu.sprites.front_default}' alt = 'foto do pokemon'/>
+            <img scr='{pikachu.sprites.front_default}' alt='foto do pokemon' />
             <div>
-            <button onClick={() => mover()}> {history.location.pathname === "/pokedex" ? "Remover" : "Adcionar"}</button >
-            <button onClick={verDet}>VER DET.</button>
+                <button onClick={() => mover()}> {history.location.pathname === "/pokedex" ? "Remover" : "Adcionar"}</button >
+                <button onClick={verDet}>VER DET.</button>
             </div>
         </Cards>
     )
