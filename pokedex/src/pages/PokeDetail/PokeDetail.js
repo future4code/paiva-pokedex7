@@ -9,3 +9,4 @@ const PokeDetail = () => {
 }
 
 export default PokeDetail;
+
