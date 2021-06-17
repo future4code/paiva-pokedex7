@@ -1,8 +1,10 @@
 import { useHistory } from 'react-router-dom'
-import { PokeCard } from '../pages/Pokedex/styled'
+import { Card, AllCards } from './styledComponents'
 import React from 'react'
 import GlobalStateContext from '../global/GlobalStateContext'
 import { useContext } from 'react'
+import Button from '@material-ui/core/Button';
+import { Visibility, Delete, AddCircle } from '@material-ui/icons'
 
 const Cards = ({ pokemon, name, id, sprites }) => {
     const history = useHistory()
@@ -12,10 +14,10 @@ const Cards = ({ pokemon, name, id, sprites }) => {
 
         if (history.location.pathname === "/pokedex") {
             requests.removeFromPokedex(pokemon)
-            console.log("removeu")
+
 
         } else {
-            console.log("adicionou")
+
             requests.addToPokedex(pokemon)
         }
     }
@@ -24,19 +26,28 @@ const Cards = ({ pokemon, name, id, sprites }) => {
         history.push(`/poke-detail/${name}`)
 
     }
-
-
-
     return (
-        <PokeCard>
-            <img src={sprites?.front_default} alt='foto do pokemon' />
-            <h2>#{id}</h2>
-            <h1>{name}</h1>
+
+        <Card>
+                <h2>#{id}</h2>
+                <img src={sprites?.front_default} alt='foto do pokemon' />            
+                <h1>{name}</h1>
+           
+
             <div>
-                <button onClick={() => mover()}> {history.location.pathname === "/pokedex" ? "Remover" : "Adicionar"}</button >
-                <button onClick={() => verDet(name)}>VER DET.</button>
+                <Button 
+                variant="contained"
+                color={history.location.pathname === "/pokedex" ? "secondary": "primary"}
+                startIcon = {history.location.pathname === "/pokedex" ? <Delete/>: <AddCircle/>}
+
+                onClick={() => mover()}> {history.location.pathname === "/pokedex" ? "Remover" : "Adicionar"}</Button >
+
+                <Button startIcon={<Visibility/>} variant="contained" color="primary"
+                onClick={() => verDet(name)}>DETALHES</Button>
             </div>
-        </PokeCard>
+
+        </Card>
+
     )
 }
 export default Cards;

@@ -2,7 +2,9 @@ import Cards from "../../Components/Cards";
 import GlobalStateContext from '../../global/GlobalStateContext'
 import { useContext } from 'react'
 import { useHistory } from "react-router";
-
+import Header from "../../Components/Header";
+import { AllCards } from "../../Components/styledComponents";
+import Footer from "../../Components/Footer";
 const Pokedex = () => {
     const { states } = useContext(GlobalStateContext)
     const history = useHistory();
@@ -21,8 +23,11 @@ const Pokedex = () => {
 
     return (
         <div>
-            <h1>Pokedex</h1>
+            <Header/>
+           <AllCards>
             {pokeCard}
+            </AllCards>
+            <Footer/>
         </div>
     )
 };

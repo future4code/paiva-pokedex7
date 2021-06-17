@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import BASE_URL from "../parameters"
 import axios from "axios"
 import GlobalStateContext from "./GlobalStateContext"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const GlobalState = (props) => {
     const [pokemons, setPokemons] = useState([]);
@@ -80,9 +82,10 @@ const GlobalState = (props) => {
         if (confirm) {
             if (!pokemonRegistered(pokemon)) {
                 setPokedex([...pokedex, pokemon]);
-                alert(`${pokeName} foi adicionado a sua pokedex!`)
+                toast.warn(`${pokeName} foi adicionado a sua pokedex!`,{
+                    position: toast.POSITION.TOP_CENTER})
             } else {
-                alert(`${pokeName} já está na pokedex!`)
+                toast.error(`${pokeName} já está na pokedex!`)
             }
         }
     };
@@ -97,7 +100,8 @@ const GlobalState = (props) => {
         if (confirm) {
             const newPokedex = pokedex.filter((resgister) => resgister.id !== pokemon.id);
             setPokedex(newPokedex);
-            alert(`${pokeName} foi removido da sua pokedex`);
+            toast.warn(`${pokeName} foi removido da sua pokedex`, {
+                position: toast.POSITION.TOP_CENTER});
         }
     }
 
@@ -110,6 +114,8 @@ const GlobalState = (props) => {
     return (
         <GlobalStateContext.Provider value={{ states, setters, requests }}>
             {props.children}
+            <ToastContainer
+            position="top-right"/>
         </GlobalStateContext.Provider>
     )
 }
