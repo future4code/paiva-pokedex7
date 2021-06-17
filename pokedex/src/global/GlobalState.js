@@ -109,7 +109,7 @@ const GlobalState = (props) => {
 
     const states = { pokemons, pokedex, loading, currentPage }
     const setters = { setPokemons, setPokedex, setLoading, setCurrentPage }
-    const requests = { getAllPokemons, addToPokedex, removeFromPokedex, pokemonRegistered }
+    const requests = { getAllPokemons, addToPokedex, removeFromPokedex, pokemonRegistered, changePage }
 
     return (
         <GlobalStateContext.Provider value={{ states, setters, requests }}>

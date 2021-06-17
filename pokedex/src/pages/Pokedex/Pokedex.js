@@ -11,23 +11,28 @@ const Pokedex = () => {
 
     const pokeCard = states.pokedex && states.pokedex
         .map((pokemon) => (
-            <Cards
-                key={pokemon.id}
-                pokemon={pokemon}
-                name={pokemon.name}
-                id={pokemon.id}
-                sprites={pokemon.sprites}
-            />
+            <div>
+                <Header
+                    name={pokemon.name}
+                />
 
+                <Cards
+                    key={pokemon.id}
+                    pokemon={pokemon}
+                    name={pokemon.name}
+                    id={pokemon.id}
+                    sprites={pokemon.sprites}
+                />
+            </div>
         ));
 
     return (
         <div>
-            <Header/>
-           <AllCards>
-            {pokeCard}
+            <Header />
+            <AllCards>
+                {pokeCard}
             </AllCards>
-            <Footer/>
+            <Footer />
         </div>
     )
 };
