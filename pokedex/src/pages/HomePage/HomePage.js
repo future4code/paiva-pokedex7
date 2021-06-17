@@ -1,41 +1,45 @@
-import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { goToPokedex } from "../../Router/coordinator";
+import React from "react";
 import Cards from '../../Components/Cards'
 import GlobalStateContext from '../../global/GlobalStateContext'
 import { useContext } from 'react'
-
-
+import Header from '../../Components/Header'
+import { AllCards } from "../../Components/styledComponents";
+import Footer from "../../Components/Footer";
 
 const HomePage = () => {
     const { states, setters } = useContext(GlobalStateContext)
-    const history = useHistory();
+
 
     const pokeCard = states.pokemons && states.pokemons
-    .filter((pokemon) => {
+        .filter((pokemon) => {
             return !states.pokedex?.some((register) => register.id === pokemon.id)
         })
         .map((pokemon) => (
-            <Cards 
-            key={pokemon.id}
-            pokemon={pokemon}
-            name={pokemon.name}
-            id={pokemon.id}
-            sprites={pokemon.sprites}
+            <Cards
+                key={pokemon.id}
+                pokemon={pokemon}
+                name={pokemon.name}
+                id={pokemon.id}
+                sprites={pokemon.sprites}
             />
 
         ));
 
 
 
-return (
-    <div>
-        <h1>Home page</h1>
-        {pokeCard}
-        <button onClick={() => goToPokedex(history)}>Para pokedex</button>
-    </div>
+    return (
+        <div>
+            <Header />
 
-)
+            <AllCards>
+                {pokeCard}                           
+            </AllCards >
+
+            <Footer/>
+
+        </div >
+
+    )
 }
 
 export default HomePage;
