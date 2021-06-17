@@ -26,24 +26,29 @@ const Cards = ({ pokemon, name, id, sprites }) => {
         history.push(`/poke-detail/${name}`)
 
     }
+
+    const nameCap = name.replace(/^\w/, (c) =>
+        c.toUpperCase()
+    );
+
     return (
 
         <Card>
-                <h2>#{id}</h2>
-                <img src={sprites?.front_default} alt='foto do pokemon' />            
-                <h1>{name}</h1>
-           
+            <h2>#{id}</h2>
+            <img src={sprites?.front_default} alt='foto do pokemon' />
+            <h1>{nameCap}</h1>
+
 
             <div>
-                <Button 
-                variant="contained"
-                color={history.location.pathname === "/pokedex" ? "secondary": "primary"}
-                startIcon = {history.location.pathname === "/pokedex" ? <Delete/>: <AddCircle/>}
+                <Button
+                    variant="contained"
+                    color={history.location.pathname === "/pokedex" ? "secondary" : "primary"}
+                    startIcon={history.location.pathname === "/pokedex" ? <Delete /> : <AddCircle />}
 
-                onClick={() => mover()}> {history.location.pathname === "/pokedex" ? "Remover" : "Adicionar"}</Button >
+                    onClick={() => mover()}> {history.location.pathname === "/pokedex" ? "Remover" : "Adicionar"}</Button >
 
-                <Button startIcon={<Visibility/>} variant="contained" color="primary"
-                onClick={() => verDet(name)}>DETALHES</Button>
+                <Button startIcon={<Visibility />} variant="contained" color="default"
+                    onClick={() => verDet(name)}>DETALHES</Button>
             </div>
 
         </Card>

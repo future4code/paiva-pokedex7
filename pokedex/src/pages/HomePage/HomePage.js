@@ -5,9 +5,11 @@ import { useContext } from 'react'
 import Header from '../../Components/Header'
 import { AllCards } from "../../Components/styledComponents";
 import Footer from "../../Components/Footer";
+import Pagination from "../../Components/Pagination";
+import { Page } from "../styledPages";
 
 const HomePage = () => {
-    const { states, setters } = useContext(GlobalStateContext)
+    const { states, requests } = useContext(GlobalStateContext)
 
 
     const pokeCard = states.pokemons && states.pokemons
@@ -32,10 +34,14 @@ const HomePage = () => {
             <Header />
 
             <AllCards>
-                {pokeCard}                           
+                {pokeCard}
             </AllCards >
-
-            <Footer/>
+            <Page>
+                <Pagination
+                    currentPage={states.currentPage}
+                    changePage={requests.changePage} />
+            </Page>
+            <Footer />
 
         </div >
 

@@ -8,12 +8,11 @@ import Header from '../../Components/Header'
 import Footer from "../../Components/Footer";
 
 const PokeDetail = () => {
-    const { states, setters, requests } = useContext(GlobalStateContext)
+    const { states } = useContext(GlobalStateContext)
 
     const params = useParams();
 
     const getDetails = useRequestData(`${BASE_URL}/${params.name}`, undefined);
-    const registered = getDetails && requests.pokemonRegistered(getDetails);
 
     if (getDetails !== 0 && states.loading === false) {
         return (
