@@ -25,6 +25,7 @@ padding: 30px;
 background:linear-gradient( #F2CF1E,#2C57AA);
 min-height: 70vh;
 font-family: 'Courier New', Courier, monospace;
+
 `
 
 export const Card = styled.div`
@@ -50,6 +51,10 @@ img{
 h1{
     text-align:center;
 }
+&:hover {    
+     transform:scale(1.1);
+    
+     }     
 `
 export const Foot = styled.footer`
 display:flex;

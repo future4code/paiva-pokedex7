@@ -3,11 +3,14 @@ import { useHistory } from 'react-router'
 import { Head } from './styledComponents'
 import { Button } from '@material-ui/core'
 import { DonutLarge, Home } from '@material-ui/icons'
+import GlobalStateContext from '../global/GlobalStateContext'
+import { useContext } from 'react'
 
 
 
 const Header = () => {
     const history = useHistory()
+    const { states } = useContext(GlobalStateContext)
 
     const toGoHome=()=>{
         history.push("/")
@@ -28,12 +31,7 @@ const Header = () => {
             return "Home"
         } else if (history.location.pathname === "/pokedex") {
             return "Pokedex"
-        } else if (history.location.pathname === "/poke-detail/:name") {
-            return "Detalhes"
-        } else {
-            return "error"
-        }
-    }
+    }}
 
     return (
      
