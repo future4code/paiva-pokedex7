@@ -13,7 +13,7 @@ const GlobalState = (props) => {
         try {
             const res = await axios
                 .get(
-                    BASE_URL`/pokemon/?limit=${quantity}&offset=${offset}`
+                    `${BASE_URL}/?limit=${quantity}&offset=${offset}`
                 );
 
             const pokemonsRequest = res.data.results.map(async (res) => {
@@ -43,6 +43,20 @@ const GlobalState = (props) => {
         allPokemons();
     }, [setPokemons, currentPage]);
 
+    useEffect(() => {
+        localStorage.setItem('pokedex', JSON.stringify(pokedex))
+    }, [pokedex])
+
+    useEffect(() => {
+        const pokedexData = localStorage.getItem('pokedex');
+        if (pokedexData) {
+            setPokedex(JSON.parse(pokedexData));
+            setLoading(false);
+        }
+    }, [setPokedex])
+
+
+
     const changePage = (currentPage) => {
         setCurrentPage(currentPage - 1);
     }
@@ -57,7 +71,6 @@ const GlobalState = (props) => {
     };
 
     const addToPokedex = (pokemon) => {
-        const newPokemonsList = [...pokedex]
         const pokeName = pokemon.name.replace(/^\w/, (c) =>
             c.toUpperCase()
         );
@@ -65,32 +78,40 @@ const GlobalState = (props) => {
             `Você deseja adicionar ${pokeName} a sua pokedex?`
         );
         if (confirm) {
-            if (!pokemonRegistered) {
+            if (!pokemonRegistered(pokemon)) {
                 setPokedex([...pokedex, pokemon]);
-                const index = pokemons.findIndex((item) => {
-                    return item.name === pokemon.name
-                })
-                newPokemonsList.splice(index, 1)
-                setPokemons(newPokemonsList)
                 alert(`${pokeName} foi adicionado a sua pokedex!`)
             } else {
                 alert(`${pokeName} já está na pokedex!`)
             }
         }
+    };
+
+    const removeFromPokedex = (pokemon) => {
+        const pokeName = pokemon.name.replace(/^\w/, (c) =>
+            c.toUpperCase()
+        );
+        const confirm = window.confirm(
+            `Você deseja remover ${pokeName} da sua pokedex?`
+        );
+        if (confirm) {
+            const newPokedex = pokedex.filter((resgister) => resgister.id !== pokemon.id);
+            setPokedex(newPokedex);
+            alert(`${pokeName} foi removido da sua pokedex`);
+        }
     }
+
+   
 
     const states = { pokemons, pokedex, loading, currentPage }
     const setters = { setPokemons, setPokedex, setLoading, setCurrentPage }
-    const requests = { getAllPokemons, addToPokedex }
+    const requests = { getAllPokemons, addToPokedex, removeFromPokedex, pokemonRegistered }
 
     return (
         <GlobalStateContext.Provider value={{ states, setters, requests }}>
             {props.children}
         </GlobalStateContext.Provider>
-
     )
-
-
 }
 
 export default GlobalState;
