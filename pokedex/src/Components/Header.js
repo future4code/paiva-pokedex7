@@ -6,7 +6,7 @@ import { DonutLarge, Home } from '@material-ui/icons'
 
 
 
-const Header = () => {
+const Header = ({ name }) => {
     const history = useHistory()
 
     const toGoHome=()=>{
@@ -28,7 +28,7 @@ const Header = () => {
             return "Home"
         } else if (history.location.pathname === "/pokedex") {
             return "Pokedex"
-        } else if (history.location.pathname === "/poke-detail/:name") {
+        } else if (history.location.pathname === `/poke-detail/${name}`) {
             return "Detalhes"
         } else {
             return "error"

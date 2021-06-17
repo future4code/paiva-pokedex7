@@ -28,6 +28,7 @@ font-family: 'Courier New', Courier, monospace;
 `
 
 export const Card = styled.div`
+padding: 10px;
 border-radius: 16px;
 color:white;
 margin:2%;
