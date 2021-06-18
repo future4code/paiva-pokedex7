@@ -9,7 +9,6 @@ align-items:center;
 font-family: 'Courier New', Courier, monospace;
 background:linear-gradient( #555459, #EF5350);
 min-height:75vh;
-width: 100vw;
 
 ;
 div{
@@ -65,7 +64,7 @@ button{
 
 }
 `
-export const Error= styled.body`
+export const Error = styled.body`
 background:linear-gradient( #555459, #EF5350);
 display:grid;
 justify-content:center;
@@ -76,4 +75,11 @@ height:60%;
 width:auto;
 }
 
+`
+
+export const DetailPage = styled.div`
+display:flex;
+flex-direction: column;
+justify-content:center;
+background-color:#EF5350;
 `
