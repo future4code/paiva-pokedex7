@@ -14,6 +14,8 @@ const PokeDetail = () => {
 
     const getDetails = useRequestData(`${BASE_URL}/${params.name}`, undefined);
 
+   
+
     if (getDetails !== 0 && states.loading === false) {
         return (
             <div>
@@ -21,6 +23,11 @@ const PokeDetail = () => {
                 <Header />
                 <Detail>
                     <div>
+                      {
+                      getDetails && (
+                        <h2>{getDetails.name.replace(/^\w/, (c) =>
+                          c.toUpperCase()) }</h2>
+                      )}
                         {getDetails && (
                             <div>
                                 <img className="frente" src={getDetails.sprites.front_default} alt='front' />
@@ -62,6 +69,7 @@ const PokeDetail = () => {
                         <div>
                             <table>
                                 <thead>
+                                  <h2>Ataques</h2>
                                     <tr>
                                         <th>Level</th>
                                         <th>Move</th>

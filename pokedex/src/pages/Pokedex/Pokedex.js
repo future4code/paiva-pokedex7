@@ -7,14 +7,10 @@ import { AllCards } from "../../Components/styledComponents";
 import Footer from "../../Components/Footer";
 const Pokedex = () => {
     const { states } = useContext(GlobalStateContext)
-    const history = useHistory();
 
     const pokeCard = states.pokedex && states.pokedex
         .map((pokemon) => (
             <div>
-                <Header
-                    name={pokemon.name}//quando eu retirei não deu nenhum problema//
-                />
 
                 <Cards
                     key={pokemon.id}

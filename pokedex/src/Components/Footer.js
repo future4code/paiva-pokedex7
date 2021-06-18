@@ -5,8 +5,8 @@ const Footer = () => {
 
     return (
         <Foot>
-            Idealizadores:
-            <hr/>
+            <h3>Idealizadores:</h3>
+            
             <p>Júllia Izidorio</p>
             <p>Pedro Rodrigues</p>
             <p>Tiago Brito</p>
