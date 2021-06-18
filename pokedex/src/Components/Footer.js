@@ -1,4 +1,3 @@
-import react from 'react';
 import { Foot } from './styledComponents';
 
 const Footer = () => {

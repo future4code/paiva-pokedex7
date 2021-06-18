@@ -1,5 +1,5 @@
 
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Head = styled.div`
 display:flex;
@@ -70,15 +70,14 @@ h1{
      }     
 `
 export const Foot = styled.footer`
-display:flex;
-flex-direction:column;
-text-align:center;
-color:white;
+display: flex;
+flex-direction: column;
+text-align: center;
+color: white;
 font-family: 'Courier New', Courier, monospace;
 line-height: 0;
-height:15vh;
-padding-top: 1%;;
+min-height: 15vh;
+padding: 10px;
 background-color:#EF5350;
 border-top: 2px solid white;
-
 `
