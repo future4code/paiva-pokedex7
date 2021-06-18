@@ -7,7 +7,7 @@ Aplicação de Pokédex (listagem de pokémons, com detalhamento das especifica�
 
 ## Recursos utilizados
 - Material UI
-- Chakra UI
+- react-tostify
 - styled-components
 - axios
 - router-react-dom
