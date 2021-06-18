@@ -11,7 +11,7 @@ export default function useRequestData(url, initialState) {
         setData(response.data);
       })
       .catch((err) => {
-        console.log(err);
+        alert(err.request.response);
       });
   }, [url]);
 

@@ -20,16 +20,27 @@ const Pokedex = () => {
                 />
             </div>
         ));
-
-    return (
-        <div>
-            <Header />
-            <AllCards>
-                {pokeCard}
-            </AllCards>
-            <Footer />
-        </div>
-    )
+    if (states.pokedex !== 0 && states.loading === false) {
+        return (
+            <div>
+                <Header />
+                <AllCards>
+                    {states.pokedex.length > 0 ? pokeCard : <h2>A Pokedex está vazia!</h2> }
+                </AllCards>
+                <Footer />
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <Header />
+                <AllCards>
+                    <h1>Carregando...</h1>
+                </AllCards>
+                <Footer />
+            </div>
+        )
+    }
 };
 
 export default Pokedex;
