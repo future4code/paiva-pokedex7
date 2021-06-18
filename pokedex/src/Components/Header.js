@@ -1,19 +1,16 @@
-import react from 'react'
+
 import { useHistory } from 'react-router'
 import { Head } from './styledComponents'
 import { Button } from '@material-ui/core'
 import { DonutLarge, Home } from '@material-ui/icons'
 
-
-
 const Header = ({ name }) => {
     const history = useHistory()
+  
 
     const toGoHome=()=>{
         history.push("/")
-
     }
-
     const toGo = () => {
 
         if (history.location.pathname === "/") {
@@ -28,19 +25,14 @@ const Header = ({ name }) => {
             return "Home"
         } else if (history.location.pathname === "/pokedex") {
             return "Pokedex"
-        } else if (history.location.pathname === `/poke-detail/${name}`) {
-            return "Detalhes"
-        } else {
-            return "error"
-        }
-    }
+        }}
 
     return (
      
             <Head>
                 <div>
                {history.location.pathname === "/" ? <Button/>: <Button
-               startIcon={<Home fontSize="large" color="primary"></Home>}
+               startIcon={<Home fontSize="larger" color="default"></Home>}
                onClick={toGoHome}               
                
                ></Button>}

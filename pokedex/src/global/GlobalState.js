@@ -82,7 +82,7 @@ const GlobalState = (props) => {
         if (confirm) {
             if (!pokemonRegistered(pokemon)) {
                 setPokedex([...pokedex, pokemon]);
-                toast.warn(`${pokeName} foi adicionado a sua pokedex!`,{
+                toast.error(`${pokeName} foi adicionado a sua pokedex!`,{
                     position: toast.POSITION.TOP_CENTER})
             } else {
                 toast.error(`${pokeName} já está na pokedex!`)
@@ -100,7 +100,7 @@ const GlobalState = (props) => {
         if (confirm) {
             const newPokedex = pokedex.filter((resgister) => resgister.id !== pokemon.id);
             setPokedex(newPokedex);
-            toast.warn(`${pokeName} foi removido da sua pokedex`, {
+            toast.error(`${pokeName} foi removido da sua pokedex`, {
                 position: toast.POSITION.TOP_CENTER});
         }
     }

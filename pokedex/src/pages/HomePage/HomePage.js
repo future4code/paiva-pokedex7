@@ -6,6 +6,7 @@ import Header from '../../Components/Header'
 import { AllCards } from "../../Components/styledComponents";
 import Footer from "../../Components/Footer";
 import Pagination from "../../Components/Pagination";
+import { Page } from "../styledPages";
 
 const HomePage = () => {
     const { states, requests } = useContext(GlobalStateContext)
@@ -35,9 +36,11 @@ const HomePage = () => {
             <AllCards>
                 {pokeCard}
             </AllCards >
-            <Pagination 
-            currentPage={states.currentPage} 
-            changePage={requests.changePage} />
+            <Page>
+                <Pagination
+                    currentPage={states.currentPage}
+                    changePage={requests.changePage} />
+            </Page>
             <Footer />
 
         </div >

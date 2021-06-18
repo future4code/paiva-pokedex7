@@ -47,7 +47,7 @@ const Cards = ({ pokemon, name, id, sprites }) => {
 
                     onClick={() => mover()}> {history.location.pathname === "/pokedex" ? "Remover" : "Adicionar"}</Button >
 
-                <Button startIcon={<Visibility />} variant="contained" color="primary"
+                <Button startIcon={<Visibility />} variant="contained" color="default"
                     onClick={() => verDet(name)}>DETALHES</Button>
             </div>
 

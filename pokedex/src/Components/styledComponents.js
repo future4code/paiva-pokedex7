@@ -1,8 +1,9 @@
-import styled from "styled-components";
+
+import styled, { keyframes } from "styled-components";
 
 export const Head = styled.div`
 display:flex;
-background:linear-gradient(#2C57AA,#F2CF1E);
+background:linear-gradient(#EF5350,#555459);
 justify-content:space-around;
 align-items:center;
 height:10vh;
@@ -22,11 +23,23 @@ gap:2% ;
 justify-content: center;
 justify-items: center;
 padding: 30px;
-background:linear-gradient( #F2CF1E,#2C57AA);
+background:linear-gradient( #555459, #EF5350);
 min-height: 70vh;
 font-family: 'Courier New', Courier, monospace;
-`
+animation: colors 15s easy;
 
+@keyframes colors {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+`
 export const Card = styled.div`
 padding: 10px;
 border-radius: 16px;
@@ -51,6 +64,10 @@ img{
 h1{
     text-align:center;
 }
+&:hover {    
+     transform:scale(1.1);
+    
+     }     
 `
 export const Foot = styled.footer`
 display:flex;
@@ -61,7 +78,7 @@ font-family: 'Courier New', Courier, monospace;
 line-height: 0;
 height:15vh;
 padding-top: 1%;;
-background-color:#2C57AA;
+background-color:#EF5350;
 border-top: 2px solid white;
 
 `
