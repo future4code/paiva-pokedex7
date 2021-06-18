@@ -20,12 +20,20 @@ const PokeDetail = () => {
 
                 <Header />
                 <Detail>
-                    {getDetails && (
-                        <div>
-                            <img className="frente" src={getDetails.sprites.front_default} alt='front' />
-                            <img src={getDetails.sprites.back_default} alt='back' />
-                        </div>
-                    )}
+                    <div>
+                        {getDetails && (
+                            <div>
+                                <img className="frente" src={getDetails.sprites.front_default} alt='front' />
+                                <img src={getDetails.sprites.back_default} alt='back' />
+                            </div>
+                        )}
+                        {getDetails && getDetails.types.map((type) => {
+                            return (
+                                <h2 key={type.type.name} type={type.type.name}>{type.type.name}</h2>
+                            )
+                        })
+                        }</div>
+
                     <Main>
                         <div>
                             <h2>Atributos</h2>
@@ -50,14 +58,7 @@ const PokeDetail = () => {
                                 })
                             }
                         </div>
-                        <div>
-                            {getDetails && getDetails.types.map((type) => {
-                                return (
-                                    <p key={type.type.name} type={type.type.name}>{type.type.name}</p>
-                                )
-                            })
-                            }
-                        </div>
+
                         <div>
                             <table>
                                 <thead>

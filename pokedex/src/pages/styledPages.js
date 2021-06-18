@@ -2,15 +2,20 @@ import styled from "styled-components";
 
 export const Detail = styled.div`
 display:grid;
-grid-template-columns:1fr 4fr;
-justify-content:space-around;
+grid-template-columns:1fr 2fr;
+justify-content:center;
 justify-items:center;
 align-items:center;
 font-family: 'Courier New', Courier, monospace;
 background:linear-gradient( #555459, #EF5350);
 min-height:75vh;
 width: 100vw;
+
 ;
+div{
+    gap:5%;
+    justify-content:center;
+}
 
 tr{
     box-shadow: 1px 1px 1px 1px white;
@@ -26,6 +31,7 @@ td{
 }
 h2{
     color:white;
+    text-align:center;
 }
 img{
     &:hover {    
@@ -58,4 +64,16 @@ button{
      }  
 
 }
+`
+export const Error= styled.body`
+background:linear-gradient( #555459, #EF5350);
+display:grid;
+justify-content:center;
+height:100vh;
+img{
+padding:10%;
+height:60%;
+width:auto;
+}
+
 `

@@ -10,9 +10,7 @@ const Header = ({ name }) => {
 
     const toGoHome=()=>{
         history.push("/")
-
     }
-
     const toGo = () => {
 
         if (history.location.pathname === "/") {

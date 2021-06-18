@@ -13,7 +13,7 @@ const Pokedex = () => {
         .map((pokemon) => (
             <div>
                 <Header
-                    name={pokemon.name}
+                    name={pokemon.name}//quando eu retirei não deu nenhum problema//
                 />
 
                 <Cards

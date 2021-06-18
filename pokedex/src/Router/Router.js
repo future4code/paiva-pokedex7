@@ -3,6 +3,7 @@ import React from "react";
 import HomePage from "../pages/HomePage/HomePage";
 import PokeDetail from "../pages/PokeDetail/PokeDetail";
 import Pokedex from "../pages/Pokedex/Pokedex"
+import { Erro } from "../pages/Erro";
 
 const Router = () => {
 
@@ -19,7 +20,7 @@ const Router = () => {
                     <PokeDetail />
                 </Route>
                 <Route>
-                    <div>Erro 404 - Página não encontrada :(</div>
+                   <Erro/>
                 </Route>
             </Switch>
         </BrowserRouter>
