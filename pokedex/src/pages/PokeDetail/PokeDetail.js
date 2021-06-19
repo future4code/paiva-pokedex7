@@ -30,10 +30,10 @@ const PokeDetail = () => {
               )}
 
             {getDetails && (
-              <div>
-                <img className="frente" src={getDetails.sprites.front_default} alt='front' />
+              <section>
+                <img src={getDetails.sprites.front_default} alt='front' />
                 <img src={getDetails.sprites.back_default} alt='back' />
-              </div>
+              </section>
             )}
             {getDetails && getDetails.types.map((type) => {
               return (
