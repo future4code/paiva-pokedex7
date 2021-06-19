@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom'
-import { Card, AllCards } from './styledComponents'
+import { Card } from './styledComponents'
 import React from 'react'
 import GlobalStateContext from '../global/GlobalStateContext'
 import { useContext } from 'react'

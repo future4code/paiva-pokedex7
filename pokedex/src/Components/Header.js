@@ -4,7 +4,7 @@ import { Head } from './styledComponents'
 import { Button } from '@material-ui/core'
 import { DonutLarge, Home } from '@material-ui/icons'
 
-const Header = ({ name }) => {
+const Header = () => {
     const history = useHistory()
   
 

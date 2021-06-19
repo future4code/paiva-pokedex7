@@ -31,7 +31,7 @@ const GlobalState = (props) => {
         }
 
         catch (err) {
-            console.log(err)
+           alert(err.request.response)
         }
     }
 

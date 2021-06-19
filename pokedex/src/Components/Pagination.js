@@ -1,5 +1,5 @@
 const Pagination = ({ currentPage, changePage }) => {
-    const pages = [...Array(39).keys()];
+    const pages = [...Array(40).keys()];
     const actualPages = pages.filter((item) => {
 
         if (currentPage <= 9) {
@@ -20,8 +20,11 @@ const Pagination = ({ currentPage, changePage }) => {
     const handleChangePage = (e) => {
         changePage(e.target.dataset.index);
     }
+    
     return (
         <div>
+            <button
+                onClick={handleChangePage} data-index={1}>Início</button>
             {actualPages.map((page) => {
                 if (page === currentPage) {
                     return <button

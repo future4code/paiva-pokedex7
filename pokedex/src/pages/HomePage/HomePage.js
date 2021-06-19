@@ -27,25 +27,38 @@ const HomePage = () => {
 
         ));
 
+    if (states.pokemon !== 0 && states.loading === false) {
+        return (
+            <div>
+                <Header />
 
+                <AllCards>
+                    {pokeCard}
+                </AllCards >
+                <Page>
+                    <Pagination
+                        currentPage={states.currentPage}
+                        changePage={requests.changePage} />
+                </Page>
+                <Footer />
 
-    return (
-        <div>
-            <Header />
+            </div>
 
-            <AllCards>
-                {pokeCard}
-            </AllCards >
-            <Page>
-                <Pagination
-                    currentPage={states.currentPage}
-                    changePage={requests.changePage} />
-            </Page>
-            <Footer />
-
-        </div >
-
-    )
+        )
+    } else {
+        return (
+            <div>
+                <Header />
+                <Page>
+                    <h1>Carregando...</h1>
+                    <Pagination
+                        currentPage={states.currentPage}
+                        changePage={requests.changePage} />
+                </Page>
+                <Footer />
+            </div>
+        )
+    }
 }
 
 export default HomePage;

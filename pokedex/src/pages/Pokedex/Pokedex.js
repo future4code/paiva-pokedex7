@@ -1,20 +1,15 @@
 import Cards from "../../Components/Cards";
 import GlobalStateContext from '../../global/GlobalStateContext'
 import { useContext } from 'react'
-import { useHistory } from "react-router";
 import Header from "../../Components/Header";
 import { AllCards } from "../../Components/styledComponents";
 import Footer from "../../Components/Footer";
 const Pokedex = () => {
     const { states } = useContext(GlobalStateContext)
-    const history = useHistory();
 
     const pokeCard = states.pokedex && states.pokedex
         .map((pokemon) => (
             <div>
-                <Header
-                    name={pokemon.name}//quando eu retirei não deu nenhum problema//
-                />
 
                 <Cards
                     key={pokemon.id}
@@ -25,16 +20,27 @@ const Pokedex = () => {
                 />
             </div>
         ));
-
-    return (
-        <div>
-            <Header />
-            <AllCards>
-                {pokeCard}
-            </AllCards>
-            <Footer />
-        </div>
-    )
+    if (states.pokedex !== 0 && states.loading === false) {
+        return (
+            <div>
+                <Header />
+                <AllCards>
+                    {states.pokedex.length > 0 ? pokeCard : <h2>A Pokedex está vazia!</h2> }
+                </AllCards>
+                <Footer />
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <Header />
+                <AllCards>
+                    <h1>Carregando...</h1>
+                </AllCards>
+                <Footer />
+            </div>
+        )
+    }
 };
 
 export default Pokedex;
