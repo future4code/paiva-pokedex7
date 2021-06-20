@@ -26,6 +26,14 @@ Aplicação de Pokédex (listagem de pokémons, com detalhamento das especifica�
 - Não há bugs conhecidos ou recursos sem utilidade nas páginas
 
 ## Imagens
+![122629941-cabd2f80-d096-11eb-984b-640bd75824ab](https://user-images.githubusercontent.com/48807462/122690146-2f46ce80-d1fe-11eb-9fc0-56ae6bfeeb72.jpeg)
+![122629940-c85ad580-d096-11eb-9290-3a83f82cf50f](https://user-images.githubusercontent.com/48807462/122690148-31a92880-d1fe-11eb-8f12-0b23b756a72e.jpeg)
+![122629939-c5f87b80-d096-11eb-8eb7-72cfca095d34](https://user-images.githubusercontent.com/48807462/122690150-3372ec00-d1fe-11eb-8239-7501d2d792ed.jpeg)
+![122629937-c3962180-d096-11eb-9070-dae189217c5b](https://user-images.githubusercontent.com/48807462/122690152-353caf80-d1fe-11eb-8fc1-032aa78b6374.jpeg)
+![122629931-bbd67d00-d096-11eb-9870-733d82bd0451](https://user-images.githubusercontent.com/48807462/122690155-3a99fa00-d1fe-11eb-9e26-3fb9be4f6ffa.jpeg)
+![122629929-b5480580-d096-11eb-9b09-6c774f6f731b](https://user-images.githubusercontent.com/48807462/122690156-3c63bd80-d1fe-11eb-8a8f-98a7d7b57331.jpeg)
+![122629925-b24d1500-d096-11eb-9859-e89657dcb982](https://user-images.githubusercontent.com/48807462/122690158-3d94ea80-d1fe-11eb-86c2-6867150cfd06.jpeg)
+![122629924-b11be800-d096-11eb-958d-ae3f1ff15c2c](https://user-images.githubusercontent.com/48807462/122690161-3f5eae00-d1fe-11eb-8131-a6de4fa50218.jpeg)
 
 
 ## Autores
