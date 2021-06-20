@@ -14,13 +14,13 @@ Aplicação de Pokédex (listagem de pokémons, com detalhamento das especifica�
 - PokeAPI - <a href="https://pokeapi.co/">https://pokeapi.co/</a>
 
 ## Link do Surge
-
+<a href="https://inconclusive-aunt.surge.sh/">https://inconclusive-aunt.surge.sh/</a>
 
 ## O que funciona
 - Botões de transição de páginas
 - Botões de adicionar e remover pokémons(uma vez que é adicionado a pokedéx, é removido da lista e vice-versa)
 - Paginação interna da HomePage
-- Responsividade mobile (até o momento, a página de detalhes ainda não está responsiva)
+- Responsividade mobile
 
 ## O que não funciona
 - Não há bugs conhecidos ou recursos sem utilidade nas páginas
