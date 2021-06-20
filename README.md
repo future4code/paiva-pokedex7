@@ -14,7 +14,7 @@ Aplicação de Pokédex (listagem de pokémons, com detalhamento das especifica�
 - PokeAPI - <a href="https://pokeapi.co/">https://pokeapi.co/</a>
 
 ## Link do Surge
-<a href="https://inconclusive-aunt.surge.sh/">https://inconclusive-aunt.surge.sh/</a>
+<a href="https://rare-desk.surge.sh/">https://rare-desk.surge.sh/</a>
 
 ## O que funciona
 - Botões de transição de páginas
